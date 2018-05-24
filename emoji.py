@@ -21,7 +21,10 @@ r.motor.set_torque(100)
 while 1:
     n = input()
     if n=="quit":
-        break
+        break(100)
+
+    if n=='turn':
+        r.motor.turn
 
     r.motor.move(n)
 
