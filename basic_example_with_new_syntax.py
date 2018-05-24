@@ -10,7 +10,8 @@ from inputs import get_mouse
 r = Robot()
 
 #adds motors to the robot skeleton
-r.add_object(AX12(25), "motor")
+r.add_object(AX12(135), "motorY")
+r.add_object(AX12(141), "motorX")
 
 
 # -------------------------   SEQUENCE DEFINITION ----------------------------#
@@ -20,18 +21,17 @@ def follow_scroll():
 
     while 1:
         events = get_mouse()
-        for value in [event.state for event in events if event.code == "REL_X"]:
-            """position = position + value//2
-            if position > 150:
-                position = 150
-            if position < 0:
-                position = 0
-            print(position)"""
-            try:
-                r.motor.turn(value)
-            except:
-                pass
-
+        for state, code in [event.state, event.code for event in events if event.code in ['REL_X', 'REL_Y']]:
+            if(code == 'REL_X'):
+                try:
+                    r.motorX.turn(state)
+                except:
+                    pass
+            else:
+                try:
+                    r.motorY.turn(state)
+                except:
+                    pass
 
 #defines a sequence of actions
 #note that the sequence is only defined and not run (for the moment)
