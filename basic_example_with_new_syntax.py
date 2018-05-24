@@ -27,8 +27,9 @@ def follow_scroll():
             try:
                 print(state)
                 if state < 50 :
-
                     r.motor.turn(10)
+                else:
+                    r.motor.turn(-10)
 
             except:
                 pass
