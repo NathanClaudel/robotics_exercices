@@ -31,33 +31,7 @@ def follow_scroll():
             except:
                 pass
 
-#defines a sequence of actionsevents = get_mouse()
-        for state in [event.state for event in events if event.code == "REL_X"]]:
-#note that the sequence is only definedevents = get_mouse()
-        for state in [event.state for event in events if event.code == "REL_X"]]: and not run (for the moment)
-r.add_sequence("seq_1")
-
-#first block of actions; all actions of a block are performed simultaneously
-#the "wait" defines the end of the block
-#and it waits :
-# 	until max_delay seconds are elapsed
-# 	OR until n_callbacks actions of this block are done
-#you MUST specify where the definition of the sequence ends
-# so the following line means "end of seq_1 definition"
-r.sequence_done()
 
 
-
-# --------------------- RUNNING ! ------------------------------------------#
-
-# We run the sequence we defined above
-r.start_sequence("seq_1")
-
-
-# We wait the end of the sequence execution
-r.wait_sequence()
 
 follow_scroll()
-
-#close the thread
-r.stop()
