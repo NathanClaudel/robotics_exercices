@@ -27,7 +27,7 @@ def follow_scroll():
 
             try:
                 print(state)
-                if state//precision == 0:
+                if abs(state//precision) <= 5:
                     print("minimum speed")
                     r.motor.turn(5)
                 else:
