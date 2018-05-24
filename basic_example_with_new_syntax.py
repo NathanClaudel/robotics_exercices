@@ -25,11 +25,8 @@ def follow_scroll():
         for state in [event.state for event in events if event.code == "REL_X"]:
 
             try:
-                print(state)
-                if state < 50 :
-                    r.motor.turn(10)
-                else:
-                    r.motor.turn(-10)
+                if state < -10 :
+                    r.motor.turn(100)
 
             except:
                 pass
