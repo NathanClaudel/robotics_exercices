@@ -11,7 +11,7 @@ from time import sleep
 r = Robot()
 
 #adds motors to the robot skeleton
-r.add_object(AX12(25), "motor")
+r.add_object(AX12(174), "motor")
 
 
 # -------------------------   SEQUENCE DEFINITION ----------------------------#
