@@ -3,6 +3,7 @@
 from robot import Robot
 from AX12 import AX12
 from inputs import get_mouse
+from time import sleep
 
 
 # ---------------------------   ROBOT CONSTRUCTION   --------------------------#
