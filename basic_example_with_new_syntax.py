@@ -25,13 +25,16 @@ def follow_scroll():
         for state in [event.state for event in events if event.code == "REL_X"]:
 
             try:
-                r.motor.turn(state)
+                if state != 0 :
+                    r.motor.turn(10)
 
             except:
                 pass
 
-#defines a sequence of actions
-#note that the sequence is only defined and not run (for the moment)
+#defines a sequence of actionsevents = get_mouse()
+        for state in [event.state for event in events if event.code == "REL_X"]]:
+#note that the sequence is only definedevents = get_mouse()
+        for state in [event.state for event in events if event.code == "REL_X"]]: and not run (for the moment)
 r.add_sequence("seq_1")
 
 #first block of actions; all actions of a block are performed simultaneously
