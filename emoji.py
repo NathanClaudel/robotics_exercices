@@ -1,0 +1,27 @@
+#import the library
+
+from robot import Robot
+from AX12 import AX12
+from inputs import get_mouse
+from time import sleep
+
+
+# ---------------------------   ROBOT CONSTRUCTION   --------------------------#
+#creates the robot skeleton
+r = Robot()
+
+#adds motors to the robot skeleton
+r.add_object(AX12(25), "motor")
+
+
+# -------------------------   SEQUENCE DEFINITION ----------------------------#
+
+while 1:
+    n = input()
+    if n=="quit":
+        break
+
+    r.motor.move(n)
+
+#close the thread
+r.stop()
