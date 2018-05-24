@@ -17,7 +17,7 @@ r.motor.set_torque(100)
 
 
 # -------------------------   SEQUENCE DEFINITION ----------------------------#
-'''
+
 while 1:
     n = input()
     if n=="quit":
@@ -26,7 +26,4 @@ while 1:
     if n=='turn':
         r.motor.turn(100)
     else:
-        r.motor.move(n)
-'''
-
-r.motor.turn(150)
+        r.motor.turn(n)
