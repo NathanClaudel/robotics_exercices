@@ -20,15 +20,15 @@ def follow_scroll():
 
     while 1:
         events = get_mouse()
-        for value in [event.state for event in events if event.code == "REL_Y"]:
-            position = position + value//2
+        for value in [event.state for event in events if event.code == "REL_X"]:
+            """position = position + value//2
             if position > 150:
                 position = 150
             if position < 0:
                 position = 0
-            print(position)
+            print(position)"""
             try:
-                r.motor.move(position)
+                r.motor.turn(value)
             except:
                 pass
 
