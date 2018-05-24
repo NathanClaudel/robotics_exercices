@@ -21,7 +21,7 @@ def follow_scroll():
 
     while 1:
         events = get_mouse()
-        for state, code in [event.state, event.code for event in events if event.code in ['REL_X', 'REL_Y']]:
+        for state, code in [(event.state, event.code) for event in events if event.code in ['REL_X', 'REL_Y']]:
             if(code == 'REL_X'):
                 try:
                     r.motorX.turn(state)
