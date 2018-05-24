@@ -23,7 +23,7 @@ def follow_scroll():
          for value in [event.state for event in events if event.code == "REL_WHEEL"]:
              position = (position + value) % 360
              print(position)
-             r.motor.move(value)
+             r.motor.move(position)
 
 #defines a sequence of actions
 #note that the sequence is only defined and not run (for the moment)
