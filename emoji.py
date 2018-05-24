@@ -25,8 +25,8 @@ while 1:
 
     if n=='turn':
         r.motor.turn(100)
-
-    r.motor.move(n)
+    else
+        r.motor.move(n)
 
 #close the thread
 r.stop()
