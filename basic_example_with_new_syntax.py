@@ -13,7 +13,7 @@ r = Robot()
 #adds motors to the robot skeleton
 r.add_object(AX12(174), "motor")
 
-precision = 20
+precision = 10
 
 # -------------------------   SEQUENCE DEFINITION ----------------------------#
 
@@ -28,7 +28,8 @@ def follow_scroll():
             try:
                 if state//precision == 0:
                     r.motor.turn(1)
-                r.motor.turn(state//precision)
+                else:
+                    r.motor.turn(state//precision)
 
             except:
                 pass
