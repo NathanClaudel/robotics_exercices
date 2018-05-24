@@ -20,6 +20,7 @@ def follow_scroll():
     position = 0
 
     while 1:
+        sleep(0.001)
         events = get_mouse()
         for state, code in [(event.state, event.code) for event in events if event.code in ['REL_X', 'REL_Y']]:
             if(code == 'REL_X'):
