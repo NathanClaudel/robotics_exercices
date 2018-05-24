@@ -19,11 +19,15 @@ def follow_scroll():
     position = 0
 
     while 1:
-         events = get_mouse()
-         for value in [event.state for event in events if event.code == "REL_WHEEL"]:
-             position = (position + value) % 360
-             print(position)
-             r.motor.move(position)
+        events = get_mouse()
+        for value in [event.state for event in events if event.code == "REL_WHEEL"]:
+            position = (position + value) % 150
+            print(position)
+            try:
+                r.motor.move(position)
+            except:
+                pass
+
 
 #defines a sequence of actions
 #note that the sequence is only defined and not run (for the moment)
