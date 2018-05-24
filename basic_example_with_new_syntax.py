@@ -24,12 +24,12 @@ def follow_scroll():
         for state, code in [(event.state, event.code) for event in events if event.code in ['REL_X', 'REL_Y']]:
             if(code == 'REL_X'):
                 try:
-                    r.motorX.turn(state)
+                    r.motorX.turn(-state//2)
                 except:
                     pass
             else:
                 try:
-                    r.motorY.turn(state)
+                    r.motorY.turn(-state//2)
                 except:
                     pass
 
