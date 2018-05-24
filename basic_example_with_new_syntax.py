@@ -11,8 +11,7 @@ from time import sleep
 r = Robot()
 
 #adds motors to the robot skeleton
-r.add_object(AX12(135), "motorY")
-r.add_object(AX12(141), "motorX")
+r.add_object(AX12(174), "motor")
 
 
 # -------------------------   SEQUENCE DEFINITION ----------------------------#
@@ -23,17 +22,13 @@ def follow_scroll():
     while 1:
         sleep(0.001)
         events = get_mouse()
-        for state, code in [(event.state, event.code) for event in events if event.code in ['REL_X', 'REL_Y']]:
-            if(code == 'REL_X'):
-                try:
-                    r.motorX.turn(-state//2)
-                except:
-                    pass
-            else:
-                try:
-                    r.motorY.turn(-state//2)
-                except:
-                    pass
+        for state in [event.state for event in events if event.code == "REL_X"]]:
+
+            try:
+                motor.move(state)
+
+            except:
+                pass
 
 #defines a sequence of actions
 #note that the sequence is only defined and not run (for the moment)
