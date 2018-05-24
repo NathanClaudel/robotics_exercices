@@ -17,6 +17,7 @@ r.motor.set_torque(100)
 
 
 # -------------------------   SEQUENCE DEFINITION ----------------------------#
+n=0
 
 while 1:
     n = input()
