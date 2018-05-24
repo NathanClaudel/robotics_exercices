@@ -22,7 +22,7 @@ def follow_scroll():
     while 1:
         sleep(0.001)
         events = get_mouse()
-        for state in [event.state for event in events if event.code == "REL_X"]]:
+        for state in [event.state for event in events if event.code == "REL_X"]:
 
             try:
                 motor.move(state)
