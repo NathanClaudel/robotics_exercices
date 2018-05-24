@@ -12,6 +12,8 @@ r = Robot()
 
 #adds motors to the robot skeleton
 r.add_object(AX12(174), "motor")
+r.motor.set_speed(100)
+r.motor.set_torque(100)
 
 
 # -------------------------   SEQUENCE DEFINITION ----------------------------#
