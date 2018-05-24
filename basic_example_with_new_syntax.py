@@ -20,7 +20,7 @@ def follow_scroll():
 
     while 1:
         events = get_mouse()
-        for value in [event.state for event in events if event.code == "REL_WHEEL"]:
+        for value in [event.state for event in events if event.code == "REL_Y"]:
             position = (position + value) % 150
             print(position)
             try:
