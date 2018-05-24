@@ -22,18 +22,17 @@ def follow_scroll():
 
     while 1:
         sleep(0.0001)
-        events = get_mouse()
-        for state, code in [(event.state, event.code) for event in events if event.code in ['REL_X', 'REL_Y']]:
-            if(code == 'REL_X'):
-                try:
-                    r.motorX.turn(-state//2)
-                except:
-                    pass
-            else:
-                try:
-                    r.motorY.turn(-state//2)
-                except:
-                    pass
+        state, code = get_mouse()[0].state, get_mouse()[0].code,
+        if(code == 'REL_X'):
+            try:
+                r.motorX.turn(-state//2)
+            except:
+                pass
+        else:
+            try:
+                r.motorY.turn(-state//2)
+            except:
+                pass
 
 #defines a sequence of actions
 #note that the sequence is only defined and not run (for the moment)
