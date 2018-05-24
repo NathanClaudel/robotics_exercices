@@ -1,9 +1,11 @@
+'''
 from inputs import devices
 
 for device in devices:
 
     print(device)
 
+'''
 
 from inputs import get_mouse
 while 1:
