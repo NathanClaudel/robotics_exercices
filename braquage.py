@@ -19,4 +19,4 @@ print(gamepad)
 for event in gamepad.read_loop():
     type, value = str(categorize(event)).split()[-1], event.value
     if(type == 'ABS_X'):
-        direction.move(int(value * AMPLITUDE / STICK_MAX))
+        direction.move(int(value * AMPLITUDE / STICK_MAX) + STRAIGHT)
