@@ -10,4 +10,4 @@ print(gamepad)
 
 #evdev takes care of polling the controller in a loop
 for event in gamepad.read_loop():
-    print(categorize(event))
+    print(event.type, event.value)
