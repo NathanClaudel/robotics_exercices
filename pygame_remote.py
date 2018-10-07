@@ -15,8 +15,11 @@ while True:
             if event.key == pygame.K_LEFT:
                 wheel.turn(20)
             if event.key == pygame.K_RIGHT:
-                wheel.turn(0)
+                print "right"
             if event.key == pygame.K_UP:
                 print "up"
             if event.key == pygame.K_DOWN:
                 print "down"
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                wheel.turn(0)
