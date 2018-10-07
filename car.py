@@ -3,8 +3,10 @@ AMPLITUDE = 30
 STICK_MAX = 30000
 TRIGGER_MAX = 255
 SPEAR_HORIZ = 132
-SPEAR_AMPL  = 20
-SPEAR_SPEED = 8
+SPEAR_MIN  = 20
+SPEAR_MAX = 150
+SPEAR_SPEED = 0.5
+
 
 import evdev
 from evdev import InputDevice, categorize, ecodes
@@ -33,6 +35,12 @@ for event in gamepad.read_loop():
         elif(type == 'ABS_Z'):
             speed.turn( 100*int(value)/TRIGGER_MAX)
         elif(type == 'ABS_RY'):
+            pos = death_engine.get_position()
+            print(pos)
+            if (pos<SPEAR_MIN) :
+                death_engine.move(SPEAR_MIN)
+            if (pos>SPEAR_MAX):
+                death_engine.move(SPEAR_MAX)
             death_engine.turn(SPEAR_SPEED * int(value) / 300)
     except:
         pass
