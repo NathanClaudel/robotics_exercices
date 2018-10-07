@@ -36,9 +36,10 @@ for event in gamepad.read_loop():
             speed.turn( 100*int(value)/TRIGGER_MAX)
         elif(type == 'ABS_RY'):
             death_engine.turn(SPEAR_SPEED * int(value) / 300)
-            '''
+
             pos = death_engine.get_position()
             print(pos)
+            '''
             if (pos<SPEAR_MIN) :
                 death_engine.move(SPEAR_MIN)
             if (pos>SPEAR_MAX):
