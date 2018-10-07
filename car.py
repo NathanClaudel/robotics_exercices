@@ -26,12 +26,12 @@ print(gamepad)
 #evdev takes care of polling the controller in a loop
 for event in gamepad.read_loop():
     type, value = str(categorize(event)).split()[-1], event.value
-#    print type, value
+    #    print type, value
     try:
-    	if(type == 'ABS_X'):
-       	    direction.move(int(value) * AMPLITUDE / STICK_MAX + STRAIGHT)
+        if(type == 'ABS_X'):
+            direction.move(int(value) * AMPLITUDE / STICK_MAX + STRAIGHT)
         elif(type == 'ABS_RZ'):
-	    speed.turn(-100*int(value)/TRIGGER_MAX)
+            speed.turn(-100*int(value)/TRIGGER_MAX)
         elif(type == 'ABS_Z'):
             speed.turn( 100*int(value)/TRIGGER_MAX)
         elif(type == 'ABS_RY'):
