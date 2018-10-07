@@ -4,7 +4,7 @@ STICK_MAX = 30000
 TRIGGER_MAX = 255
 SPEAR_HORIZ = 132
 SPEAR_AMPL  = 20
-SPEAR_SPEED = 0.5
+SPEAR_SPEED = 8
 
 import evdev
 from evdev import InputDevice, categorize, ecodes
