@@ -14,19 +14,19 @@ while True:
     for event in events:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                direction.move(20)
+                direction.move(-70)
             if event.key == pygame.K_RIGHT:
-                direction.move(-20)
+                direction.move(-30)
             if event.key == pygame.K_UP:
-                wheel.turn(-20)
+                wheel.turn(-50)
             if event.key == pygame.K_DOWN:
-                wheel.turn(20)
+                wheel.turn(50)
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_UP:
                 wheel.turn(0)
             if event.key == pygame.K_DOWN:
                 wheel.turn(0)
             if event.key == pygame.K_LEFT:
-                direction.move(0)
+                direction.move(-50)
             if event.key == pygame.K_RIGHT:
-                direction.move(0)
+                direction.move(-50)
