@@ -23,7 +23,7 @@ while True:
             if event.key == pygame.K_DOWN:
                 wheel.turn(50)
             if event.key == pygame.K_KP0:
-                l=move(20)
+                l.move(20)
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_UP:
                 wheel.turn(0)
@@ -34,4 +34,4 @@ while True:
             if event.key == pygame.K_RIGHT:
                 direction.move(-49)
             if event.key == pygame.K_KP0:
-                l=move(0)
+                l.move(0)
