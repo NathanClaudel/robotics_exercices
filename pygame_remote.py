@@ -7,19 +7,26 @@ pygame.display.set_mode((300, 200))
 pygame.display.set_caption('robot remote')
 
 wheel = AX12(172)
+direction=AX12(25)
 
 while True:
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                wheel.turn(20)
+                direction.move(20)
             if event.key == pygame.K_RIGHT:
-                print "right"
+                direction.move(-20)
             if event.key == pygame.K_UP:
-                wheel.moove(20)
+                wheel.turn(-20)
             if event.key == pygame.K_DOWN:
-                print "down"
+                wheel.turn(20)
         if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_UP:
                 wheel.turn(0)
+            if event.key == pygame.K_DOWN:
+                wheel.turn(0)
+            if event.key == pygame.K_LEFT:
+                direction.move(0)
+            if event.key == pygame.K_RIGHT:
+                direction.move(0)
