@@ -15,6 +15,7 @@ from AX12 import AX12
 direction = AX12(25)
 speed = AX12(172)
 death_engine = AX12(142)
+balloon = AX12(143)
 
 #creates object 'gamepad' to store the data
 #you can call it whatever you like
@@ -26,7 +27,7 @@ print(gamepad)
 #evdev takes care of polling the controller in a loop
 for event in gamepad.read_loop():
     type, value = str(categorize(event)).split()[-1], event.value
-    #    print type, value
+    print type, value
     try:
         if(type == 'ABS_X'):
             direction.move(int(value) * AMPLITUDE / STICK_MAX + STRAIGHT)
