@@ -46,5 +46,10 @@ for event in gamepad.read_loop():
             if (pos>SPEAR_MAX):
                 death_engine.move(SPEAR_MAX)
             '''
+        elif(type == 'ABS_HAT0Y'):
+            if value==1:
+                balloon.move(10)
+            if value==-1:
+                ballon.move(-10)
     except:
         pass
