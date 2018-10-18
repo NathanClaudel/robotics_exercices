@@ -47,6 +47,7 @@ for event in gamepad.read_loop():
                 death_engine.move(SPEAR_MAX)
             '''
         elif(type == 'ABS_HAT0Y'):
+            ballon.turn(-1)
             if value==1:
                 balloon.turn(10)
             if value==-1:
