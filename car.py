@@ -50,8 +50,10 @@ for event in gamepad.read_loop():
             print("I did receive that..")
             ballon.turn(-1)
             if value==1:
+                print("ok1")
                 balloon.turn(10)
             if value==-1:
+                print("ok2")
                 ballon.turn(-10)
     except:
         pass
