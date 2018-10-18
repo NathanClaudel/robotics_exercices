@@ -48,7 +48,7 @@ for event in gamepad.read_loop():
             '''
         elif(type == 'ABS_RX'):
             print("I did receive that..")
-            balloon.turn(value/10)
+            balloon.move(int(value) * AMPLITUDE / STICK_MAX + STRAIGHT)
             '''
             if value=="1":
                 print("ok1")
