@@ -46,14 +46,15 @@ for event in gamepad.read_loop():
             if (pos>SPEAR_MAX):
                 death_engine.move(SPEAR_MAX)
             '''
-        elif(type == 'ABS_HAT0Y'):
+        elif(type == 'ABS_RX'):
             print("I did receive that..")
-            ballon.turn(100)
+            ballon.turn(value/10)
+            '''
             if value=="1":
                 print("ok1")
                 balloon.turn(10)
             if value==-1:
                 print("ok2")
-                ballon.turn(-10)
+                ballon.turn(-10)'''
     except:
         pass
