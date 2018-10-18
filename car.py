@@ -48,8 +48,8 @@ for event in gamepad.read_loop():
             '''
         elif(type == 'ABS_HAT0Y'):
             if value==1:
-                balloon.move(10)
+                balloon.turn(10)
             if value==-1:
-                ballon.move(-10)
+                ballon.turn(-10)
     except:
         pass
