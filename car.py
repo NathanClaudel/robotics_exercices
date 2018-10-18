@@ -8,7 +8,7 @@ SPEAR_MAX = 150
 SPEAR_SPEED = 0.5
 
 MIN_BALLOON = -50
-MAX_BALLOON = 50
+MAX_BALLOON = 20
 
 
 import evdev
