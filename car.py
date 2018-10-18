@@ -48,7 +48,7 @@ for event in gamepad.read_loop():
             '''
         elif(type == 'ABS_HAT0Y'):
             print("I did receive that..")
-            ballon.turn(-1)
+            ballon.turn(10)
             if value=="1":
                 print("ok1")
                 balloon.turn(10)
