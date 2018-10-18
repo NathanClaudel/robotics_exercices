@@ -7,6 +7,9 @@ SPEAR_MIN  = 20
 SPEAR_MAX = 150
 SPEAR_SPEED = 0.5
 
+MIN_BALLOON = -50
+MAX_BALLOON = 50
+
 
 import evdev
 from evdev import InputDevice, categorize, ecodes
@@ -49,12 +52,12 @@ for event in gamepad.read_loop():
         elif(type == 'ABS_RX'):
             print("I did receive that..")
             balloon.move(int(value) * AMPLITUDE / STICK_MAX + STRAIGHT)
-            '''
-            if value=="1":
+
+            if int(value)<100:
                 print("ok1")
-                balloon.turn(10)
-            if value==-1:
+                balloon.move(MIN_BALLOON)
+            if int(value)>100:
                 print("ok2")
-                ballon.turn(-10)'''
+                balloon.move(MAX_BALLOON)
     except:
         pass
